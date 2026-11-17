@@ -12,5 +12,5 @@ class RAM:
         self.used_swap = swap_memory.used / (1024.0 ** 3)
         return self
     def __str__(self):
-        return f"Memory: {self.used_ram} ({self.total_ram}), Swap: {self.used_swap} ({self.total_swap}"
+        return f"Memory: {self.used_ram} ({self.total_ram}), Swap: {self.used_swap} ({self.total_swap})"
 

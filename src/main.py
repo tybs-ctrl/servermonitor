@@ -2,7 +2,7 @@ from fastapi import FastAPI
 
 from cpu import CPU
 from ram import RAM
-
+from disk import DISK
 import uvicorn
 
 app = FastAPI()
@@ -11,8 +11,10 @@ app = FastAPI()
 async def root():
     cpu = CPU()
     ram = RAM();
+    disk = DISK();
     print(cpu.update())
     print(ram.update())
+    print(disk.update())
 
     return {
         "cpu_name": cpu.name,
@@ -23,7 +25,9 @@ async def root():
         "total_ram": round(ram.total_ram,2),
         "used_ram": round(ram.used_ram,2),
         "total_swap": round(ram.total_swap,2),
-        "used_swap": round(ram.used_swap,2)        
+        "used_swap": round(ram.used_swap,2),
+        "total_disk": round(disk.total,2),
+        "used_disk": round(disk.used,2)  
     }
 
 if __name__ == "__main__":
