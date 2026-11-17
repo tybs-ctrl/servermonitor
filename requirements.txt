@@ -1,2 +1,4 @@
 uvicorn
 fastapi
+psutil
+py-cpuinfo
